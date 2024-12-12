@@ -64,7 +64,7 @@
     font-family: "Averia Libre", serif;
     font-style: normal;
     display: flex;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding: 0.3rem 0.8rem;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -129,7 +129,6 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding-bottom: 200px;
     background-image: url('./images/blur.png'); /* Use your local background image */
     background-size: cover;
     background-position: center;
@@ -171,6 +170,7 @@
     justify-content: space-around;
     gap: 40px;
     padding: 0 10px;
+    margin-bottom: 40px;
   }
   
   .box {
@@ -422,30 +422,45 @@
 
   @media (max-width: 768px) {
     h1 {
-        font-size: 5rem; /* Adjust font size */
+      font-size: 5rem; /* Adjust font size */
     }
 
     .navbar a {
-      font-size: 2rem; /* Adjust font size */
-      padding: 0.2rem 0.5rem; /* Reduce padding for smaller links */
+        padding: 0.2rem 0.5rem; /* Reduce padding for smaller links */
     }
 
     .navbar {
+        padding-top: 20px;
         flex-direction: row; /* Stack links vertically */
         gap: 1rem;
     }
 
+    .navbar, .navbar a {
+      margin-top: 20px;
+      font-size: 2rem; /* Ensures navbar links have a base size */
+    }
+    
+
     .box-container {
         flex-direction: column; /* Stack boxes vertically */
+        align-items: center;
+        justify-content: center;
     }
 
     .box {
-        width: 100%; /* Make boxes responsive */
-        height: 100%;
+        width: 100%;  /* Make boxes take up 80% of screen width */
+        height: 0;
+        aspect-ratio: 1; /* Ensure square aspect ratio */
     }
 
-    .about-head {
-        gap: 20px; /* Reduce gap between elements */
-        flex-direction: column; /* Stack image and text */
+    .highlighted-text {
+
+        font-size: 2rem;  /* Smaller text in boxes */
+    }
+
+
+    /* Remove padding at the bottom of the body */
+    .body2 {
+        padding-bottom: 0;
     }
   }
