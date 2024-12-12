@@ -8,7 +8,6 @@
   
   html, body {
     height: 100%;
-    overflow: hidden; /* Disable scrolling */
   }
   
   .body1 {
@@ -45,6 +44,9 @@
     opacity: 70%;
     margin-bottom: 8rem;
   }
+
+  
+
   
   /* Centered Navbar Styling */
   .navbar {
@@ -209,7 +211,7 @@
   .film-page .box:nth-child(2) { background-image: url('./images/why.png'); }
 
   .about-page .box:nth-child(1) { background-image: url('./images/face.jpg'); }
-  .about-page .box:nth-child(2) { background-image: url('./images/postcard.jpg'); }
+  .about-page .box:nth-child(2) { background-image: url('./images/resume.png'); }
 
   .box:hover {
     transform: scale(1.05);
@@ -362,34 +364,6 @@
     border-radius: 8px;            /* Optional: rounded corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
   }  
-  
-  /* about section gallery */
-  .gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0;
-    background-color: #f4f4f4;
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .gallery-item {
-      text-align: center;
-  }
-  .gallery-item img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .caption {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #333;
-  }
 
   .ct {
     max-height: 600px;
@@ -404,10 +378,26 @@
     border-radius: 50%; /* Makes the container circular */
   }
 
+  .square-container {
+    width: 125px; /* Define a fixed size */
+    height: 125px; /* Same as width for a perfect circle */
+    overflow: hidden; /* Ensures the image stays inside the bounds */
+  }
+
   .circle-image {
       width: 100%; /* Make the image fill the container */
       height: 100%; /* Stretch image to container size */
       object-fit: cover; /* Ensures the image aspect ratio fits well */
+  }
+
+  .link-image {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Stretch image to container size */
+    object-fit: cover; /* Ensures the image aspect ratio fits well */
+  }
+
+  .link-image:hover {
+      opacity: 70%; /* Increases brightness when hovered */
   }
   
   .about-head {
@@ -416,10 +406,46 @@
     gap: 150px; /* Space between the image and heading */
   }
 
+  .link-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
   .close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 1.5rem;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+        font-size: 5rem; /* Adjust font size */
+    }
+
+    .navbar a {
+      font-size: 2rem; /* Adjust font size */
+      padding: 0.2rem 0.5rem; /* Reduce padding for smaller links */
+    }
+
+    .navbar {
+        flex-direction: row; /* Stack links vertically */
+        gap: 1rem;
+    }
+
+    .box-container {
+        flex-direction: column; /* Stack boxes vertically */
+    }
+
+    .box {
+        width: 100%; /* Make boxes responsive */
+        height: 100%;
+    }
+
+    .about-head {
+        gap: 20px; /* Reduce gap between elements */
+        flex-direction: column; /* Stack image and text */
+    }
   }
